@@ -6,19 +6,58 @@
 
 ## API Endpoints
 
-- **POST /signup**
+- **GET /manualRecon/getAllManualReconRecords**
 
-  Register a new user.
+    Get all manual reconciliation records
+
+- **GET /getAManualReconRecord/:id**
+
+    Get a manual reconciliation record by Id
+
+- **POST /manualRecon/createRecords**
+
+  Register a new manual reconciliation record.
 
   Request Body:
 
   ```json
-  {
-    "email": "user@example.com",
-    "username":"Jogn",
-    "password": "password"
-  }
+    {
+      "esbn": "222222",
+      "billNumber": "334344",
+      "customerName": "Franklin Raphael Edu",
+      "depositorsPhone": "08139362969",
+      "depositorsRcNumber": "124578",
+      "totalAmountPaid": "10,000",
+      "paymentMethod": "transfer",
+      "paymentDate": "2023-11-26",
+      "branchName": "Lagos Branch",
+      "depositSlipNumber": "123456",
+      "paymentRefNumber": "123456",
+      "receiptNumber": "12345556",
+      "revenue": "Land Use Charge",
+      "approveRejectFlag": 2,
+      "approveRejectReason": "Invalid Document",
+      "inputter": "Raphael",
+      "authoriser": "Edward"
+    }
   ```
+
+- **PUT /manualRecon/updateManualReconRecord/:id**
+
+  update a manual reconciliation record.
+
+    Request Body:
+
+  ```json
+    {
+      "esbn": "22245",
+      "billNumber": "334344",
+      "customerName": "Franklin Raphael Edu",
+      "depositorsPhone": "08139362969",
+      "depositorsRcNumber": "124578",
+    }
+  ```
+
 
 - **POST /login**
 
