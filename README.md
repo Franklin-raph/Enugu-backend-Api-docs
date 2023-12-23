@@ -5,7 +5,8 @@
 <p>https://enugutest1-zwbxjl4eea-uc.a.run.app/api/</p>
 
 ## API Endpoints
-> Get all manual reconciliation records
+
+###Get all manual reconciliation records
 ```http
 GET /manualRecon/getAllManualReconRecords
 ```
