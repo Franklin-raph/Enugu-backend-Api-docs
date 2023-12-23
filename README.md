@@ -42,8 +42,9 @@
     }
   ```
 
+```
 - **PUT /manualRecon/updateManualReconRecord/:id**
-
+```
   update a manual reconciliation record.
 
     Request Body:
