@@ -5,10 +5,11 @@
 <p>https://enugutest1-zwbxjl4eea-uc.a.run.app/api/</p>
 
 ## API Endpoints
+```http
+GET /manualRecon/getAllManualReconRecords**
+```
 
-- **GET /manualRecon/getAllManualReconRecords**
-
-    Get all manual reconciliation records
+Get all manual reconciliation records
 
 - **GET /getAManualReconRecord/:id**
 
@@ -45,7 +46,7 @@
 ```http
 PUT /manualRecon/updateManualReconRecord/:id
 ```
-  update a manual reconciliation record.
+> update a manual reconciliation record.
 
     Request Body:
 
