@@ -2,7 +2,13 @@
 
 # Manual Reconciliation Data API Endpoints
 
-Base Url 
+Request Body:
+```json
+{
+    Base Url: https://enugutest1-zwbxjl4eea-uc.a.run.app/api/
+}
+
+```
 
 ## API Endpoints
 
