@@ -5,24 +5,24 @@
 <p>https://enugutest1-zwbxjl4eea-uc.a.run.app/api/</p>
 
 ## API Endpoints
-
-###Get all manual reconciliation records
 ```http
 GET /manualRecon/getAllManualReconRecords
 ```
+> Get all manual reconciliation records
 
 
-> Get a manual reconciliation record by Id
 ```http
 GET /getAManualReconRecord/:id
 ```
+> Get a manual reconciliation record by Id
 
 
 
-> Register a new manual reconciliation record.
 ```http
 POST /manualRecon/createRecords
 ```
+> Register a new manual reconciliation record.
+
   Request Body:
 
   ```json
@@ -47,10 +47,10 @@ POST /manualRecon/createRecords
     }
   ```
 
-> update a manual reconciliation record.
 ```http
 PUT /manualRecon/updateManualReconRecord/:id
 ```
+> update a manual reconciliation record.
 
     Request Body:
 
