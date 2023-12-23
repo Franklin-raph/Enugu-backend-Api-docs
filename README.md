@@ -42,8 +42,8 @@
     }
   ```
 
-```
-- **PUT /manualRecon/updateManualReconRecord/:id**
+```http
+  PUT /manualRecon/updateManualReconRecord/:id**
 ```
   update a manual reconciliation record.
 
