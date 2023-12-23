@@ -43,7 +43,7 @@
   ```
 
 ```http
-  PUT /manualRecon/updateManualReconRecord/:id
+PUT /manualRecon/updateManualReconRecord/:id
 ```
   update a manual reconciliation record.
 
