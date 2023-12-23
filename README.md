@@ -140,7 +140,6 @@ GET /getAManualReconRecord/:id
 ```http
 POST /manualRecon/createRecords
 ```
-> Register a new manual reconciliation record.
 
   Request Body:
 
@@ -165,12 +164,12 @@ POST /manualRecon/createRecords
       "authoriser": "Edward"
     }
   ```
+  > Register a new manual reconciliation record.
+
 
 ```http
 PUT /manualRecon/updateManualReconRecord/:id
 ```
-> update a manual reconciliation record.
-
   Request Body:
 
   ```json
@@ -182,10 +181,18 @@ PUT /manualRecon/updateManualReconRecord/:id
       "depositorsRcNumber": "124578",
     }
   ```
+  > update a manual reconciliation record.
 
 
 ```http
 PATCH /authorizeManualReconRecord/:id
+```
+```json
+{
+  "approveRejectFlag":1,
+  "authoriser":"Frank Ralph",
+  "approveRejectReason":"An invalid document"
+}
 ```
 > Update a manual reconciliation record by Id
 
