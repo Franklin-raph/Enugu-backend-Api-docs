@@ -1,3 +1,4 @@
+### 1. Get Reducing Balance Receipt Information
 - **Endpoint** `POST /getReducingBalReceiptInfo`
 ```json
 {
@@ -7,7 +8,7 @@
 - **Description:** Retrieves reducing balance receipt information.
 
 
-
+### 2. Create Tax Information
 - **Endpoint** `POST /createTaxInfo`
 ```json
 {
@@ -19,6 +20,7 @@
 - **Description:** Creates a new tax information record.
 
 
+### 3. Create Tax Payer Information
 - **Endpoint** `POST /createTaxPayerInfo`
 ```json
 {
@@ -29,7 +31,7 @@
 ```
 - **Description:** Creates a new taxpayer information record.
 
-
+### 4. Get Reducing Balance Details by ID
 - **Endpoint** `GET /getReducingBalanceDetails/:id`
 ```json
 {
@@ -41,7 +43,7 @@
 - **Description:** Retrieves the reducing balance receipt information by ID.
 
 
-
+### 5. Get Single Tax Information by ID
 - **Endpoint** `GET /getReducingTaxInfo/:id`
 ```json
 {
@@ -53,7 +55,7 @@
 - **Description:** Retrieves single tax information by ID.
 
 
-
+### 6. Update Tax Information by ID
 - **Endpoint** `PUT /updateTaxInfo/:id`
 ```json
 {
@@ -65,7 +67,7 @@
 - **Description:** Updates the tax information record by ID.
 
 
-
+### 7. Update Tax Payer Information by ID
 - **Endpoint** `PUT /updateTaxPayerInfo/:id`
 ```json
 {
@@ -77,7 +79,7 @@
 - **Description:** Updates the taxpayer information record by ID.
 
 
-
+### 8. Delete Tax Information Record by ID
 - **Endpoint** `DELETE /deleteTaxInfoRecord/:id`
 ```json
 {
@@ -87,6 +89,7 @@
 - **Description:** Deletes the tax information record by ID.
 
 
+### 9. Delete Tax Payer Information Record by ID
 - **Endpoint** `DELETE /deleteTaxPayerInfoRecord/:id`
 ```json
 {
@@ -96,7 +99,7 @@
 - **Description:** Deletes the taxpayer information record by ID.
 
 
-
+### 10. Get Single Tax Payer Information by ID
 - **Endpoint** `GET /getTaxPayerInfo/:id`
 ```json
 {
