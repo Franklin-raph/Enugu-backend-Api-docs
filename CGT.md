@@ -127,9 +127,13 @@
 
 ```json
 {
-   "setupInfo": {
-       // Updated setup information fields
-   }
+  "type": "Goods",
+  "name": "Toyota Camry",
+  "code": "0003",
+  "rate": 7.5,
+  "revenue": "Test Revenue",
+  "tariff": "test traiff",
+  "description": "Test Description"
 }
 ```
 
@@ -147,9 +151,111 @@
     * **Description** : Calculates CGT tax.
 
 ```json
-{
-   "taxDetails": {
-       // Tax calculation details
-   }
-}
+[
+    {
+      "TypeOfCGT": "Electronics",
+      "TypeOfProperty": "Smartphone",
+      "AquisitionAmount": 5000,
+      "CurrentMarketValue":200,
+      "CGTRate":10,
+      "SalesAmount":180,
+      "Profit":500,
+      "AquisitionDate": "2024-01-01",
+      "SaleDate": "2024-01-01",
+      "PropertyLocation": "Lagos",
+      "PropertyNature": "New"
+    },
+    {
+      "TypeOfCGT": "Electronics",
+      "TypeOfProperty": "Smartphone",
+      "AquisitionAmount": 5000,
+      "CurrentMarketValue":200,
+      "CGTRate":10,
+      "SalesAmount":180,
+      "Profit":1000,
+      "AquisitionDate": "2024-01-01",
+      "SaleDate": "2024-01-01",
+      "PropertyLocation": "Lagos",
+      "PropertyNature": "New"
+    },
+    {
+      "TypeOfCGT": "Electronics",
+      "TypeOfProperty": "Smartphone",
+      "AquisitionAmount": 5000,
+      "CurrentMarketValue":200,
+      "CGTRate":10,
+      "SalesAmount":180,
+      "Profit":2500,
+      "AquisitionDate": "2024-01-01",
+      "SaleDate": "2024-01-01",
+      "PropertyLocation": "Lagos",
+      "PropertyNature": "New"
+    },
+    {
+      "TypeOfCGT": "Electronics",
+      "TypeOfProperty": "Smartphone",
+      "AquisitionAmount": 5000,
+      "CurrentMarketValue":200,
+      "CGTRate":10,
+      "SalesAmount":180,
+      "Profit":5000,
+      "AquisitionDate": "2024-01-01",
+      "SaleDate": "2024-01-01",
+      "PropertyLocation": "Lagos",
+      "PropertyNature": "New"
+    }
+  ][
+    {
+      "TypeOfCGT": "Electronics",
+      "TypeOfProperty": "Smartphone",
+      "AquisitionAmount": 5000,
+      "CurrentMarketValue":200,
+      "CGTRate":10,
+      "SalesAmount":180,
+      "Profit":500,
+      "AquisitionDate": "2024-01-01",
+      "SaleDate": "2024-01-01",
+      "PropertyLocation": "Lagos",
+      "PropertyNature": "New"
+    },
+    {
+      "TypeOfCGT": "Electronics",
+      "TypeOfProperty": "Smartphone",
+      "AquisitionAmount": 5000,
+      "CurrentMarketValue":200,
+      "CGTRate":10,
+      "SalesAmount":180,
+      "Profit":1000,
+      "AquisitionDate": "2024-01-01",
+      "SaleDate": "2024-01-01",
+      "PropertyLocation": "Lagos",
+      "PropertyNature": "New"
+    },
+    {
+      "TypeOfCGT": "Electronics",
+      "TypeOfProperty": "Smartphone",
+      "AquisitionAmount": 5000,
+      "CurrentMarketValue":200,
+      "CGTRate":10,
+      "SalesAmount":180,
+      "Profit":2500,
+      "AquisitionDate": "2024-01-01",
+      "SaleDate": "2024-01-01",
+      "PropertyLocation": "Lagos",
+      "PropertyNature": "New"
+    },
+    {
+      "TypeOfCGT": "Electronics",
+      "TypeOfProperty": "Smartphone",
+      "AquisitionAmount": 5000,
+      "CurrentMarketValue":200,
+      "CGTRate":10,
+      "SalesAmount":180,
+      "Profit":5000,
+      "AquisitionDate": "2024-01-01",
+      "SaleDate": "2024-01-01",
+      "PropertyLocation": "Lagos",
+      "PropertyNature": "New"
+    }
+  ]
 ```
