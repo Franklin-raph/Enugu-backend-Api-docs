@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "b413c9b5-c7c3-459a-9a83-434cc5e0389a",
+		"name": "Purchasing Tax API",
+		"description": "API endpoints for managing purchasing tax operations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18002297"
+	},
+	"item": [
+		{
+			"name": "Company Information Management",
+			"item": [
+				{
+					"name": "Create Company Information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNjFiYy1lMWM1LTRzMGEtOTE1Mi02YzY1NWMxZDAiLCJtZGFNb2R1bGVDb21wYW55IjoiMzkiLCJtZGFNb2R1bGVDb21wYW55TmFtZSI6IlBQU01CIiwiaWF0IjoxNzQwMzI4NzU3LCJleHAiOjE3NDA0MTUxNTd9.I8tj9C6KNEi-oxGkZrvNlocAOFI97igmgy0THB3BD4I"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"companyInfo\": {\n    \"esbn\": \"123ESBN098\",\n    \"email\": \"admin12@gmail.com\",\n    \"filingMode\":\"Period\",\n    \"billYear\":\"2024\",\n    \"name\": \"Admin Record\",\n    \"phone\": \"09085859594\",\n    \"sector\": \"00012\",\n    \"address\": \"35 abba street\",\n    \"discount\": 700,\n    \"discountReason\": \"test purpose\",\n    \"outstanding\": 600,\n    \"outstandingReason\": \"test\",\n    \"totalProductAmount\": 0,\n    \"totalVatAmount\": 0,\n    \"fileType\": \"Unit Filling\",\n    \"startDate\":\"2024-05-10\",\n    \"endDate\":\"2024-06-10\"\n  },\n  \"categories\": [\n    {\n      \"Category\": \"Electronics\",\n      \"Product\": \"Smartphone\",\n      \"Purchases_Amount\": 5000,\n      \"Transaction_Date\": \"2024-01-01\",\n      \"Status\": \"Paid\",\n      \"PT_Rate\": 7.5,\n      \"RevenueCode\":\"00011\",\n      \"Bill_Amount\": 375\n    },\n    {\n      \"Category\": \"Furniture\",\n      \"Product\": \"Office Chair\",\n      \"Purchases_Amount\": 1500,\n      \"Transaction_Date\": \"2024-02-28\",\n      \"Status\": \"Pending\",\n      \"PT_Rate\": 7.5,\n      \"RevenueCode\":\"00012\",\n      \"Bill_Amount\": 12\n    },\n    {\n      \"Category\": \"Clothing\",\n      \"Product\": \"Jacket\",\n      \"Purchases_Amount\": 800,\n      \"Transaction_Date\": \"2024-03-31\",\n      \"Status\": \"Paid\",\n      \"PT_Rate\": 7.5,\n      \"RevenueCode\":\"00013\",\n      \"Bill_Amount\": 6\n    },\n    {\n      \"Category\": \"Beauty\",\n      \"Product\": \"Skincare Set\",\n      \"Purchases_Amount\": 300,\n      \"Transaction_Date\": \"2024-04-01\",\n      \"Status\": \"Overdue\",\n      \"PT_Rate\": 7.5,\n      \"RevenueCode\":\"00014\",\n      \"Bill_Amount\": 2\n    }\n  ],\n  \"files\": [\n    {\n      \"fileName\": \"fileDoc.pdf\",\n      \"fileType\": \"pdf\",\n      \"File\": \"data:application/pdf;base64,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MSAwIG9iago8PC9UeXBlIC9QYWdlcwovS2lkcyBbMyAwIFIgNSAwIFIgXQovQ291bnQgMgovTWVkaWFCb3ggWzAgMCA1OTUuMjggODQxLjg5XQo+PgplbmRvYmoKNyAwIG9iago8PC9UeXBlIC9Gb250Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQKL1N1YnR5cGUgL1R5cGUxCi9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nCj4+CmVuZG9iago4IDAgb2JqCjw8L1R5cGUgL0ZvbnQKL0Jhc2VGb250IC9IZWx2ZXRpY2EKL1N1YnR5cGUgL1R5cGUxCi9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nCj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXQovRm9udCA8PAovRjEgNyAwIFIKL0YyIDggMCBSCj4+Ci9YT2JqZWN0IDw8Cj4+Cj4+CmVuZG9iago5IDAgb2JqCjw8Ci9Qcm9kdWNlciAoUHlGUERGIDEuNy4yIGh0dHA6Ly9weWZwZGYuZ29vZ2xlY29kZS5jb20vKQovQ3JlYXRpb25EYXRlIChEOjIwMjQxMDE5MDY1NTAyKQo+PgplbmRvYmoKMTAgMCBvYmoKPDwKL1R5cGUgL0NhdGFsb2cKL1BhZ2VzIDEgMCBSCi9PcGVuQWN0aW9uIFszIDAgUiAvRml0SCBudWxsXQovUGFnZUxheW91dCAvT25lQ29sdW1uCj4+CmVuZG9iagp4cmVmCjAgMTEKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAxODAwIDAwMDAwIG4gCjAwMDAwMDIwOTAgMDAwMDAgbiAKMDAwMDAwMDAwOSAwMDAwMCBuIAowMDAwMDAwMDg3IDAwMDAwIG4gCjAwMDAwMDA5NjQgMDAwMDAgbiAKMDAwMDAwMTA0MiAwMDAwMCBuIAowMDAwMDAxODkzIDAwMDAwIG4gCjAwMDAwMDE5OTQgMDAwMDAgbiAKMDAwMDAwMjIwNCAwMDAwMCBuIAowMDAwMDAyMzEzIDAwMDAwIG4gCnRyYWlsZXIKPDwKL1NpemUgMTEKL1Jvb3QgMTAgMCBSCi9JbmZvIDkgMCBSCj4+CnN0YXJ0eHJlZgoyNDE3CiUlRU9GCg==\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/purchasingTax/createCompanyInfo",
+						"description": "Creates a new company information record"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Company Information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNjFiYy1lMWM1LTRzMGEtOTE1Mi02YzY1NWMxZDAiLCJtZGFNb2R1bGVDb21wYW55IjoiMzkiLCJtZGFNb2R1bGVDb21wYW55TmFtZSI6IlBQU01CIiwiaWF0IjoxNzQwMzI4NzU3LCJleHAiOjE3NDA0MTUxNTd9.I8tj9C6KNEi-oxGkZrvNlocAOFI97igmgy0THB3BD4I"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/purchasingTax/getAllCompanyInfo",
+						"description": "Retrieves all company information records"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Purchase Tax Authorizer View",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNjFiYy1lMWM1LTRzMGEtOTE1Mi02YzY1NWMxZDAiLCJtZGFNb2R1bGVDb21wYW55IjoiMzkiLCJtZGFNb2R1bGVDb21wYW55TmFtZSI6IlBQU01CIiwiaWF0IjoxNzQwMzI4NzU3LCJleHAiOjE3NDA0MTUxNTd9.I8tj9C6KNEi-oxGkZrvNlocAOFI97igmgy0THB3BD4I"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/purchasingTax/getPurchaseTaxauthorizerView",
+						"description": "Retrieves company records formatted for tax authorizers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Purchase Tax Reviewer View",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNjFiYy1lMWM1LTRzMGEtOTE1Mi02YzY1NWMxZDAiLCJtZGFNb2R1bGVDb21wYW55IjoiMzkiLCJtZGFNb2R1bGVDb21wYW55TmFtZSI6IlBQU01CIiwiaWF0IjoxNzQwMzI4NzU3LCJleHAiOjE3NDA0MTUxNTd9.I8tj9C6KNEi-oxGkZrvNlocAOFI97igmgy0THB3BD4I"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/purchasingTax/getPurchaseTaxReviewerView",
+						"description": "Retrieves company records formatted for tax reviewers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Company Information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNjFiYy1lMWM1LTRzMGEtOTE1Mi02YzY1NWMxZDAiLCJtZGFNb2R1bGVDb21wYW55IjoiMzkiLCJtZGFNb2R1bGVDb21wYW55TmFtZSI6IlBQU01CIiwiaWF0IjoxNzQwMzI4NzU3LCJleHAiOjE3NDA0MTUxNTd9.I8tj9C6KNEi-oxGkZrvNlocAOFI97igmgy0THB3BD4I"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/purchasingTax/getCompanyInfoRecord/66101869-a765-45cc-ae08-802984f79740",
+						"description": "Retrieves information for a specific company"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company Information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNjFiYy1lMWM1LTRzMGEtOTE1Mi02YzY1NWMxZDAiLCJtZGFNb2R1bGVDb21wYW55IjoiMzkiLCJtZGFNb2R1bGVDb21wYW55TmFtZSI6IlBQU01CIiwiaWF0IjoxNzQwMzI4NzU3LCJleHAiOjE3NDA0MTUxNTd9.I8tj9C6KNEi-oxGkZrvNlocAOFI97igmgy0THB3BD4I"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"companyInfo\": {\n    \"esbn\": \"3472300125\",\n    \"email\": \"admin@gmail.com\",\n    \"filingMode\":\"Period\",\n    \"billYear\":\"2024\",\n    \"name\": \"Admin Record 123\",\n    \"phone\": \"09085859594\",\n    \"sector\": \"00012\",\n    \"address\": \"35 abba street\",\n    \"discount\": 600,\n    \"discountReason\": \"test purpose 9876\",\n    \"outstanding\": 600,\n    \"outstandingReason\": \"test 1234\",\n    \"fileType\": \"Unit Filling\",\n    \"startDate\":\"2024-05-10\",\n    \"endDate\":\"2024-06-10\"\n  },\n  \"files\": [\n    {\n      \"fileName\": \"New file pdf\",\n      \"fileType\": \"application/pdf\",\n      \"File\": \"123 new file\"\n    },\n    {\n      \"fileName\": \"New file pdf\",\n      \"fileType\": \"application/pdf\",\n      \"File\": \"123 new latest file\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/purchasingTax/updateCompanyInfo/66101869-a765-45cc-ae08-802984f79740",
+						"description": "Updates information for a specific company"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company Information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNjFiYy1lMWM1LTRzMGEtOTE1Mi02YzY1NWMxZDAiLCJtZGFNb2R1bGVDb21wYW55IjoiMzkiLCJtZGFNb2R1bGVDb21wYW55TmFtZSI6IlBQU01CIiwiaWF0IjoxNzQwMzI4NzU3LCJleHAiOjE3NDA0MTUxNTd9.I8tj9C6KNEi-oxGkZrvNlocAOFI97igmgy0THB3BD4I"
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/purchasingTax/deleteCompanyInfoRecord/ae5c77b2-f398-44a9-a421-ebfe9549487f",
+						"description": "Deletes a company information record"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase Tax Setup",
+			"item": [
+				{
+					"name": "Create Purchase Tax Setup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "/createPurchaseTaxSetUp",
+						"description": "Creates a new purchase tax setup configuration"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Purchase Tax Setups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "/getActivePurchaseTaxSetUps",
+						"description": "Retrieves all active purchase tax setup configurations"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Purchase Tax Setups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "/getAllPurchaseTaxSetup",
+						"description": "Retrieves all purchase tax setup configurations"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Purchase Tax Setup",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "/updatePurchaseTaxSetUp/:id",
+							"path": [
+								"updatePurchaseTaxSetUp",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Setup ID"
+								}
+							]
+						},
+						"description": "Updates a purchase tax setup configuration"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tax Calculation",
+			"item": [
+				{
+					"name": "Calculate Tax",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNjFiYy1lMWM1LTRzMGEtOTE1Mi02YzY1NWMxZDAiLCJtZGFNb2R1bGVDb21wYW55IjoiMzkiLCJtZGFNb2R1bGVDb21wYW55TmFtZSI6IlBQU01CIiwiaWF0IjoxNzQwMzI4NzU3LCJleHAiOjE3NDA0MTUxNTd9.I8tj9C6KNEi-oxGkZrvNlocAOFI97igmgy0THB3BD4I"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"discount\": 700,\n  \"outstanding\": 700,\n  \"products\": [\n    {\n      \"SN\": 1,\n      \"Product\": \"goods\",\n      \"Bill_Amount\": 400,\n      \"Transaction_Date\": \"2025-02-09\",\n      \"Purchases_Amount\": 8000,\n      \"Status\": \"\",\n      \"PT_Rate\": 5,\n      \"Category\": \"Cement\",\n      \"RevenueCode\": \"PT-0009\"\n    },\n    {\n      \"SN\": 2,\n      \"Product\": \"goods\",\n      \"Bill_Amount\": 6300,\n      \"Transaction_Date\": \"2025-02-09\",\n      \"Purchases_Amount\": 700,\n      \"Status\": \"\",\n      \"PT_Rate\": 900,\n      \"Category\": \"business admin\",\n      \"RevenueCode\": \"0003445/559044\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/purchasingTax/calculateTax",
+						"description": "Calculates tax for a given purchase"
+					},
+					"response": []
+				},
+				{
+					"name": "Upload For Bulk Tax Calculation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": "/uploadForBulkTaxCalc",
+						"description": "Calculates tax for multiple purchases using an uploaded file"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Setup Record Management",
+			"item": [
+				{
+					"name": "Deactivate Setup Record",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "/deactivateSetUpRecord/:id",
+							"path": [
+								"deactivateSetUpRecord",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Setup Record ID"
+								}
+							]
+						},
+						"description": "Deactivates a setup record"
+					},
+					"response": []
+				},
+				{
+					"name": "Activate Setup Record",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "/activateSetUpRecord/:id",
+							"path": [
+								"activateSetUpRecord",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Setup Record ID"
+								}
+							]
+						},
+						"description": "Activates a setup record"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8081/api/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNjFiYy1lMWM1LTRzMGEtOTE1Mi02YzY1NWMxZDAiLCJtZGFNb2R1bGVDb21wYW55IjoiMzkiLCJtZGFNb2R1bGVDb21wYW55TmFtZSI6IlBQU01CIiwiaWF0IjoxNzQwMzI4NzU3LCJleHAiOjE3NDA0MTUxNTd9.I8tj9C6KNEi-oxGkZrvNlocAOFI97igmgy0THB3BD4I",
+			"type": "string"
+		}
+	]
+}

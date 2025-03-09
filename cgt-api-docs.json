@@ -1,0 +1,483 @@
+{
+    "info": {
+      "name": "CGT API",
+      "description": "Collection for Capital Gains Tax API endpoints",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+      {
+        "key": "baseUrl",
+        "value": "http://localhost:8081/api/",
+        "type": "string"
+      }
+    ],
+    "item": [
+      {
+        "name": "Company Information",
+        "item": [
+          {
+            "name": "Create Company Info and Property Details",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"companyName\": \"Example Corp\",\n  \"registrationNumber\": \"RC12345\",\n  \"taxIdentificationNumber\": \"TIN67890\",\n  \"contactEmail\": \"contact@example.com\",\n  \"contactPhone\": \"+1234567890\",\n  \"propertyDetails\": {\n    \"propertyAddress\": \"123 Main St\",\n    \"acquisitionDate\": \"2020-01-15\",\n    \"acquisitionValue\": 250000,\n    \"currentValue\": 350000,\n    \"propertyType\": \"Commercial\"\n  }\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/createCGTCompanyInfo",
+                "host": ["{{baseUrl}}"],
+                "path": ["createCGTCompanyInfo"]
+              },
+              "description": "Creates a new CGT company record with property details."
+            }
+          },
+          {
+            "name": "Get All Company Records",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/getAllCGTCompanyInfo",
+                "host": ["{{baseUrl}}"],
+                "path": ["getAllCGTCompanyInfo"]
+              },
+              "description": "Retrieves all CGT company records."
+            }
+          },
+          {
+            "name": "Get Company Records for Authorizer",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/getCGTauthorizerView",
+                "host": ["{{baseUrl}}"],
+                "path": ["getCGTauthorizerView"]
+              },
+              "description": "Retrieves all CGT company records tailored for authorizer view."
+            }
+          },
+          {
+            "name": "Get Company Records for Reviewer",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/getCGTReviewerView",
+                "host": ["{{baseUrl}}"],
+                "path": ["getCGTReviewerView"]
+              },
+              "description": "Retrieves all CGT company records tailored for reviewer view."
+            }
+          },
+          {
+            "name": "Get All CGT Records by ESBN",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/getAllCGTRecordsByEsbn?esbn={{esbn}}",
+                "host": ["{{baseUrl}}"],
+                "path": ["getAllCGTRecordsByEsbn"],
+                "query": [
+                  {
+                    "key": "esbn",
+                    "value": "{{esbn}}"
+                  }
+                ]
+              },
+              "description": "Retrieves all CGT records by ESBN (Employer's Social Benefits Number)."
+            }
+          },
+          {
+            "name": "Get Single Company Information",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/getCGTCompanyInfoRecord/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["getCGTCompanyInfoRecord", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "ID of the company record"
+                  }
+                ]
+              },
+              "description": "Retrieves a single CGT company record by ID."
+            }
+          },
+          {
+            "name": "Get CGT Receipt",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/getCGTReceipt/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["getCGTReceipt", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "ID of the receipt"
+                  }
+                ]
+              },
+              "description": "Retrieves a CGT receipt by ID."
+            }
+          },
+          {
+            "name": "Update Company Information",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"companyName\": \"Updated Corp\",\n  \"registrationNumber\": \"RC12345\",\n  \"taxIdentificationNumber\": \"TIN67890\",\n  \"contactEmail\": \"updated@example.com\",\n  \"contactPhone\": \"+1234567890\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/updateCGTCompanyInfo/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["updateCGTCompanyInfo", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "ID of the company record to update"
+                  }
+                ]
+              },
+              "description": "Updates a CGT company information record."
+            }
+          },
+          {
+            "name": "Delete Company Information Record",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/deleteCGTCompanyInfoRecord/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["deleteCGTCompanyInfoRecord", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "ID of the company record to delete"
+                  }
+                ]
+              },
+              "description": "Deletes a CGT company information record."
+            }
+          },
+          {
+            "name": "Delete Company File",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/deleteCGTCompanyFile/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["deleteCGTCompanyFile", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "ID of the file to delete"
+                  }
+                ]
+              },
+              "description": "Deletes a CGT company file."
+            }
+          }
+        ]
+      },
+      {
+        "name": "Property Details",
+        "item": [
+          {
+            "name": "Update Property Details",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"propertyAddress\": \"456 New Address\",\n  \"acquisitionDate\": \"2019-05-20\",\n  \"acquisitionValue\": 280000,\n  \"currentValue\": 375000,\n  \"propertyType\": \"Residential\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/updatePropertyDetail/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["updatePropertyDetail", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "ID of the property detail to update"
+                  }
+                ]
+              },
+              "description": "Updates property details for a CGT record."
+            }
+          }
+        ]
+      },
+      {
+        "name": "Tax Calculation",
+        "item": [
+          {
+            "name": "Calculate CGT",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"companyInfoId\": \"60a2b3c4d5e6f7g8h9i0j1\",\n  \"propertyDetailId\": \"60a2b3c4d5e6f7g8h9i0j2\",\n  \"calculationDate\": \"2023-10-25\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/calculateCGTax",
+                "host": ["{{baseUrl}}"],
+                "path": ["calculateCGTax"]
+              },
+              "description": "Calculates Capital Gains Tax for a given property."
+            }
+          }
+        ]
+      },
+      {
+        "name": "Setup Management",
+        "item": [
+          {
+            "name": "Create CGT Setup",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"taxRate\": 0.15,\n  \"exemptionAmount\": 10000,\n  \"effectiveDate\": \"2023-01-01\",\n  \"expiryDate\": \"2023-12-31\",\n  \"description\": \"Standard CGT setup for 2023\",\n  \"isActive\": true\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/createCGTSetUp",
+                "host": ["{{baseUrl}}"],
+                "path": ["createCGTSetUp"]
+              },
+              "description": "Creates a new CGT setup configuration."
+            }
+          },
+          {
+            "name": "Get Active CGT Setups",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/getActiveCGTSetUps",
+                "host": ["{{baseUrl}}"],
+                "path": ["getActiveCGTSetUps"]
+              },
+              "description": "Retrieves all active CGT setup configurations."
+            }
+          },
+          {
+            "name": "Get All CGT Setups",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/getAllCGTSetup",
+                "host": ["{{baseUrl}}"],
+                "path": ["getAllCGTSetup"]
+              },
+              "description": "Retrieves all CGT setup configurations (active and inactive)."
+            }
+          },
+          {
+            "name": "Update CGT Setup",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"taxRate\": 0.18,\n  \"exemptionAmount\": 12000,\n  \"effectiveDate\": \"2023-01-01\",\n  \"expiryDate\": \"2023-12-31\",\n  \"description\": \"Updated CGT setup for 2023\",\n  \"isActive\": true\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/updateCGTSetUp/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["updateCGTSetUp", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "ID of the setup to update"
+                  }
+                ]
+              },
+              "description": "Updates a CGT setup configuration."
+            }
+          },
+          {
+            "name": "Deactivate CGT Setup",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/deactivateCGTSetUpRecord/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["deactivateCGTSetUpRecord", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "ID of the setup to deactivate"
+                  }
+                ]
+              },
+              "description": "Deactivates a CGT setup configuration."
+            }
+          },
+          {
+            "name": "Activate CGT Setup",
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/activateCGTSetUpRecord/:id",
+                "host": ["{{baseUrl}}"],
+                "path": ["activateCGTSetUpRecord", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "ID of the setup to activate"
+                  }
+                ]
+              },
+              "description": "Activates a previously deactivated CGT setup configuration."
+            }
+          }
+        ]
+      }
+    ]
+  }

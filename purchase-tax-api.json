@@ -1,0 +1,367 @@
+{
+    "info": {
+      "name": "Purchasing Tax API",
+      "description": "API endpoints for managing purchasing tax operations",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Company Information Management",
+        "item": [
+          {
+            "name": "Create Company Information",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/createCompanyInfo",
+                "path": ["createCompanyInfo"]
+              },
+              "description": "Creates a new company information record",
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"companyName\": \"Example Corp\",\n  \"registrationNumber\": \"REG12345\",\n  \"taxId\": \"TAX98765\",\n  \"address\": {\n    \"street\": \"123 Business Ave\",\n    \"city\": \"Enterprise City\",\n    \"state\": \"State\",\n    \"zipCode\": \"12345\",\n    \"country\": \"Country\"\n  },\n  \"contactPerson\": {\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"phone\": \"+1234567890\"\n  }\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Get All Company Information",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/getAllCompanyInfo",
+                "path": ["getAllCompanyInfo"]
+              },
+              "description": "Retrieves all company information records"
+            }
+          },
+          {
+            "name": "Get Purchase Tax Authorizer View",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/getPurchaseTaxauthorizerView",
+                "path": ["getPurchaseTaxauthorizerView"]
+              },
+              "description": "Retrieves company records formatted for tax authorizers"
+            }
+          },
+          {
+            "name": "Get Purchase Tax Reviewer View",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/getPurchaseTaxReviewerView",
+                "path": ["getPurchaseTaxReviewerView"]
+              },
+              "description": "Retrieves company records formatted for tax reviewers"
+            }
+          },
+          {
+            "name": "Get Single Company Information",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/getCompanyInfoRecord/:id",
+                "path": ["getCompanyInfoRecord", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "Company ID"
+                  }
+                ]
+              },
+              "description": "Retrieves information for a specific company"
+            }
+          },
+          {
+            "name": "Update Company Information",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/updateCompanyInfo/:id",
+                "path": ["updateCompanyInfo", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "Company ID"
+                  }
+                ]
+              },
+              "description": "Updates information for a specific company"
+            }
+          },
+          {
+            "name": "Delete Company Information",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/deleteCompanyInfoRecord/:id",
+                "path": ["deleteCompanyInfoRecord", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "Company ID"
+                  }
+                ]
+              },
+              "description": "Deletes a company information record"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Purchase Tax Setup",
+        "item": [
+          {
+            "name": "Create Purchase Tax Setup",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/createPurchaseTaxSetUp",
+                "path": ["createPurchaseTaxSetUp"]
+              },
+              "description": "Creates a new purchase tax setup configuration"
+            }
+          },
+          {
+            "name": "Get Active Purchase Tax Setups",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "{{baseUrl}}/getActivePurchaseTaxSetUps",
+                "path": ["getActivePurchaseTaxSetUps"]
+              },
+              "description": "Retrieves all active purchase tax setup configurations"
+            }
+          },
+          {
+            "name": "Get All Purchase Tax Setups",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "{{baseUrl}}/getAllPurchaseTaxSetup",
+                "path": ["getAllPurchaseTaxSetup"]
+              },
+              "description": "Retrieves all purchase tax setup configurations"
+            }
+          },
+          {
+            "name": "Update Purchase Tax Setup",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/updatePurchaseTaxSetUp/:id",
+                "path": ["updatePurchaseTaxSetUp", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "Setup ID"
+                  }
+                ]
+              },
+              "description": "Updates a purchase tax setup configuration"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Tax Calculation",
+        "item": [
+          {
+            "name": "Calculate Tax",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/calculateTax",
+                "path": ["calculateTax"]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"purchaseAmount\": 1000.00,\n  \"purchaseDate\": \"2025-02-15\",\n  \"categoryId\": \"cat123\",\n  \"companyId\": \"comp456\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "description": "Calculates tax for a given purchase"
+            }
+          },
+          {
+            "name": "Upload For Bulk Tax Calculation",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/uploadForBulkTaxCalc",
+                "path": ["uploadForBulkTaxCalc"]
+              },
+              "body": {
+                "mode": "formdata",
+                "formdata": [
+                  {
+                    "key": "file",
+                    "type": "file",
+                    "src": []
+                  }
+                ]
+              },
+              "description": "Calculates tax for multiple purchases using an uploaded file"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Setup Record Management",
+        "item": [
+          {
+            "name": "Deactivate Setup Record",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/deactivateSetUpRecord/:id",
+                "path": ["deactivateSetUpRecord", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "Setup Record ID"
+                  }
+                ]
+              },
+              "description": "Deactivates a setup record"
+            }
+          },
+          {
+            "name": "Activate Setup Record",
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/activateSetUpRecord/:id",
+                "path": ["activateSetUpRecord", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "",
+                    "description": "Setup Record ID"
+                  }
+                ]
+              },
+              "description": "Activates a setup record"
+            }
+          }
+        ]
+      }
+    ],
+    "variable": [
+      {
+        "key": "baseUrl",
+        "value": "http://your-api-base-url",
+        "type": "string"
+      },
+      {
+        "key": "token",
+        "value": "your-auth-token",
+        "type": "string"
+      }
+    ]
+  }

@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "cca5ae1b-ddba-4a24-9ea6-ccd0365aad4b",
+		"name": "CGT API Copy",
+		"description": "Collection for Capital Gains Tax API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18002297"
+	},
+	"item": [
+		{
+			"name": "Company Information",
+			"item": [
+				{
+					"name": "Create Company Info and Property Details",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"companyInfo\": {\n    \"filingType\": \"Unit Filling\",\n    \"filingMode\":\"Monthly\",\n    \"name\":\"SUCCESS SAMUEL remote test 5\",\n    \"esbn\": \"ES444444\",\n    \"billYear\":\"2024\",\n    \"billMonth\":\"november\",\n    \"email\": \"admin123@test.com\",\n    \"phone\": \"09085859594\",\n    \"address\": \"35 abba street\",\n    \"sector\": \"Construction\",\n    \"startDate\": \"2024-02-01\",\n    \"endDate\": \"2024-02-28\",\n    \"discount\": 700,\n    \"discountReason\": \"test purpose\",\n    \"outstanding\": 600,\n    \"outstandingReason\": \"test\",\n    \"remark\":\"remark\"\n  },\n  \"propertyDetails\": [\n    {\n      \"TypeOfCGT\": \"Electronics\",\n      \"TypeOfProperty\": \"Smartphone\",\n      \"AquisitionAmount\": 5000,\n      \"CurrentMarketValue\":2000000,\n      \"CGTRate\":1,\n      \"SalesAmount\":2000000,\n      \"Profit\":500,\n      \"PropertyLocation\": \"Lagos\",\n      \"PropertyNature\": \"New\",\n      \"RevenueCode\":\"111\"\n    },\n    {\n      \"TypeOfCGT\": \"Electronics\",\n      \"TypeOfProperty\": \"Smartphone\",\n      \"AquisitionAmount\": 5000,\n      \"CurrentMarketValue\":180,\n      \"CGTRate\":1,\n      \"SalesAmount\":180,\n      \"Profit\":1000,\n      \"PropertyLocation\": \"Lagos\",\n      \"PropertyNature\": \"New\",\n      \"RevenueCode\":\"111\"\n    },\n    {\n      \"TypeOfCGT\": \"Electronics\",\n      \"TypeOfProperty\": \"Smartphone\",\n      \"AquisitionAmount\": 5000,\n      \"CurrentMarketValue\":1000000000,\n      \"CGTRate\":1,\n      \"SalesAmount\":1000000000,\n      \"Profit\":2500,\n      \"PropertyLocation\": \"Lagos\",\n      \"PropertyNature\": \"New\",\n      \"RevenueCode\":\"111\"\n    },\n    {\n      \"TypeOfCGT\": \"Electronics\",\n      \"TypeOfProperty\": \"Smartphone\",\n      \"AquisitionAmount\": 5000,\n      \"CurrentMarketValue\":180,\n      \"CGTRate\":1,\n      \"SalesAmount\":180,\n      \"Profit\":5000,\n      \"PropertyLocation\": \"Lagos\",\n      \"PropertyNature\": \"New\",\n      \"RevenueCode\":\"111\"\n    }\n  ],\n  \"files\": [\n    {\n      \"fileType\":\"pdf\",\n      \"fileName\":\"document.pdf\",\n      \"File\": \"data:application/pdf;base64,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MSAwIG9iago8PC9UeXBlIC9QYWdlcwovS2lkcyBbMyAwIFIgNSAwIFIgXQovQ291bnQgMgovTWVkaWFCb3ggWzAgMCA1OTUuMjggODQxLjg5XQo+PgplbmRvYmoKNyAwIG9iago8PC9UeXBlIC9Gb250Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQKL1N1YnR5cGUgL1R5cGUxCi9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nCj4+CmVuZG9iago4IDAgb2JqCjw8L1R5cGUgL0ZvbnQKL0Jhc2VGb250IC9IZWx2ZXRpY2EKL1N1YnR5cGUgL1R5cGUxCi9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nCj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXQovRm9udCA8PAovRjEgNyAwIFIKL0YyIDggMCBSCj4+Ci9YT2JqZWN0IDw8Cj4+Cj4+CmVuZG9iago5IDAgb2JqCjw8Ci9Qcm9kdWNlciAoUHlGUERGIDEuNy4yIGh0dHA6Ly9weWZwZGYuZ29vZ2xlY29kZS5jb20vKQovQ3JlYXRpb25EYXRlIChEOjIwMjQxMDE5MDY1NTAyKQo+PgplbmRvYmoKMTAgMCBvYmoKPDwKL1R5cGUgL0NhdGFsb2cKL1BhZ2VzIDEgMCBSCi9PcGVuQWN0aW9uIFszIDAgUiAvRml0SCBudWxsXQovUGFnZUxheW91dCAvT25lQ29sdW1uCj4+CmVuZG9iagp4cmVmCjAgMTEKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAxODAwIDAwMDAwIG4gCjAwMDAwMDIwOTAgMDAwMDAgbiAKMDAwMDAwMDAwOSAwMDAwMCBuIAowMDAwMDAwMDg3IDAwMDAwIG4gCjAwMDAwMDA5NjQgMDAwMDAgbiAKMDAwMDAwMTA0MiAwMDAwMCBuIAowMDAwMDAxODkzIDAwMDAwIG4gCjAwMDAwMDE5OTQgMDAwMDAgbiAKMDAwMDAwMjIwNCAwMDAwMCBuIAowMDAwMDAyMzEzIDAwMDAwIG4gCnRyYWlsZXIKPDwKL1NpemUgMTEKL1Jvb3QgMTAgMCBSCi9JbmZvIDkgMCBSCj4+CnN0YXJ0eHJlZgoyNDE3CiUlRU9GCg==\"\n    }\n  ]\n}"
+						},
+						"url": "{{baseUrl}}/createCGTCompanyInfo",
+						"description": "Creates a new CGT company record with property details."
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Company Records",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/getAllCGTCompanyInfo",
+						"description": "Retrieves all CGT company records."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Records for Authorizer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/getCGTauthorizerView",
+						"description": "Retrieves all CGT company records tailored for authorizer view."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Records for Reviewer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/getCGTReviewerView",
+						"description": "Retrieves all CGT company records tailored for reviewer view."
+					},
+					"response": []
+				},
+				{
+					"name": "Get All CGT Records by ESBN",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/getAllCGTRecordsByEsbn?esbn={{esbn}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"getAllCGTRecordsByEsbn"
+							],
+							"query": [
+								{
+									"key": "esbn",
+									"value": "{{esbn}}"
+								}
+							]
+						},
+						"description": "Retrieves all CGT records by ESBN (Employer's Social Benefits Number)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Company Information",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/getCGTCompanyInfoRecord/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"getCGTCompanyInfoRecord",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the company record"
+								}
+							]
+						},
+						"description": "Retrieves a single CGT company record by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get CGT Receipt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/getCGTReceipt/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"getCGTReceipt",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the receipt"
+								}
+							]
+						},
+						"description": "Retrieves a CGT receipt by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company Information",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"companyInfo\": {\n    \"esbn\": \"3472300125\",\n    \"email\": \"admin@gmail.com\",\n    \"filingMode\":\"Period\",\n    \"billYear\":\"2024\",\n    \"name\": \"Admin Record abcd\",\n    \"phone\": \"01212334566\",\n    \"sector\": \"Administrative, Support & Waste & Remediation\",\n    \"address\": \"35 abba street\",\n    \"discount\": 20,\n    \"discountReason\": \"test purpose 9876\",\n    \"outstanding\": 0,\n    \"outstandingReason\": \"test 1234\",\n    \"fileType\": \"Unit Filling\",\n    \"startDate\":\"2024-05-10\",\n    \"endDate\":\"2024-06-10\"\n  },\n  \"files\": [\n    {\n      \"fileName\": \"New file pdf\",\n      \"fileType\": \"application/pdf\",\n      \"File\": \"123 new file\"\n    },\n    {\n      \"fileName\": \"New file pdf\",\n      \"fileType\": \"application/pdf\",\n      \"File\": \"123 new latest file\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/updateCGTCompanyInfo/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"updateCGTCompanyInfo",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the company record to update"
+								}
+							]
+						},
+						"description": "Updates a CGT company information record."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company Information Record",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/deleteCGTCompanyInfoRecord/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deleteCGTCompanyInfoRecord",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the company record to delete"
+								}
+							]
+						},
+						"description": "Deletes a CGT company information record."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company File",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/deleteCGTCompanyFile/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deleteCGTCompanyFile",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the file to delete"
+								}
+							]
+						},
+						"description": "Deletes a CGT company file."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Property Details",
+			"item": [
+				{
+					"name": "Update Property Details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"propertyAddress\": \"456 New Address\",\n  \"acquisitionDate\": \"2019-05-20\",\n  \"acquisitionValue\": 280000,\n  \"currentValue\": 375000,\n  \"propertyType\": \"Residential\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/updatePropertyDetail/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"updatePropertyDetail",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the property detail to update"
+								}
+							]
+						},
+						"description": "Updates property details for a CGT record."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tax Calculation",
+			"item": [
+				{
+					"name": "Calculate CGT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"otherDetails\": {\n        \"outstanding\": 1000,\n        \"discount\": 2000\n    },\n    \"taxData\": [\n        {\n            \"TypeOfCGT\": \"Long-Term Capital Gains\",\n            \"CGTRate\": 1,\n            \"AquisitionAmount\": 434443,\n            \"CurrentMarketValue\": 3343,\n            \"SalesAmount\": 20000000,\n            \"Profit\": 2000,\n            \"AquisitionDate\": \"2025-01-26\",\n            \"SaleDate\": \"2025-01-24\",\n            \"TypeOfProperty\": \"scccdcddcd\",\n            \"PropertyLocation\": \"refef5\",\n            \"PropertyNature\": \"ccevevrtjyym\",\n            \"TaxDue\": 200000\n        },\n        {\n            \"TypeOfCGT\": \"Long-Term Capital Gains\",\n            \"CGTRate\": 1,\n            \"TypeOfProperty\": \"scccdcddcd\",\n            \"AquisitionAmount\": 345678,\n            \"CurrentMarketValue\": 23456,\n            \"SalesAmount\": 120000,\n            \"Profit\": 2000,\n            \"AquisitionDate\": \"2025-01-15\",\n            \"SaleDate\": \"2025-01-19\",\n            \"PropertyLocation\": \"refef5\",\n            \"PropertyNature\": \"ccevevrtjyym\",\n            \"TaxDue\": 150000\n        }\n    ]\n}"
+						},
+						"url": "{{baseUrl}}/calculateCGTax",
+						"description": "Calculates Capital Gains Tax for a given property."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Setup Management",
+			"item": [
+				{
+					"name": "Create CGT Setup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Capital Gains Tax\",\n    \"name\": \"Capital Gains Tax\",\n    \"code\": \"0001\",\n    \"rate\": 1,\n    \"revenueCode\": \"20008001/12010001\",\n    \"tariff\": \"Capital Gains Tax traiff\",\n    \"description\": \"Capital Gains Tax Description\"\n  }"
+						},
+						"url": "{{baseUrl}}/createCGTSetUp",
+						"description": "Creates a new CGT setup configuration."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active CGT Setups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/getActiveCGTSetUps",
+						"description": "Retrieves all active CGT setup configurations."
+					},
+					"response": []
+				},
+				{
+					"name": "Get All CGT Setups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/getAllCGTSetup",
+						"description": "Retrieves all CGT setup configurations (active and inactive)."
+					},
+					"response": []
+				},
+				{
+					"name": "Update CGT Setup",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Capital Gains Tax\",\n    \"name\": \"Capital Gains Tax\",\n    \"code\": \"0001\",\n    \"rate\": 1,\n    \"revenueCode\": \"20008001/12010001\",\n    \"tariff\": \"Capital Gains Tax traiff\",\n    \"description\": \"Capital Gains Tax Description\"\n  }"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/updateCGTSetUp/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"updateCGTSetUp",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the setup to update"
+								}
+							]
+						},
+						"description": "Updates a CGT setup configuration."
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate CGT Setup",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/deactivateCGTSetUpRecord/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deactivateCGTSetUpRecord",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the setup to deactivate"
+								}
+							]
+						},
+						"description": "Deactivates a CGT setup configuration."
+					},
+					"response": []
+				},
+				{
+					"name": "Activate CGT Setup",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/activateCGTSetUpRecord/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"activateCGTSetUpRecord",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID of the setup to activate"
+								}
+							]
+						},
+						"description": "Activates a previously deactivated CGT setup configuration."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8081/api/",
+			"type": "string"
+		},
+		{
+			"key": "tohen",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxNjFiYy1lMWM1LTRzMGEtOTE1Mi02YzY1NWMxZDAiLCJtZGFNb2R1bGVDb21wYW55IjoiMTIiLCJtZGFNb2R1bGVDb21wYW55TmFtZSI6IkVOU1NBQSIsImlhdCI6MTc0MTUzNTg4NiwiZXhwIjoxNzQxNjIyMjg2fQ.UxoiWcbElcffQvmKsTjuc9uK4kBNEF-t2jX9QsQr3MA",
+			"type": "string"
+		}
+	]
+}
